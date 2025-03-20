@@ -18,13 +18,13 @@ function App() {
   ];
 
   const [grid, setGrid] = useState(board);
-  
+  const initialBoard = board.map(row => row.map(cell => cell !== null));
 
   return (
     <>
-      <Board board={grid}></Board>
+      <Board board={grid} setBoard={setGrid} initialBoard={initialBoard} />
     </>
   )
 }
 
-export default App
+export default App;
